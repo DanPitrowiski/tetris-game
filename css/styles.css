@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+h1 {
+    font-family: 'Libre Franklin', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 30px 0 50px 0;
+}
+
+h3 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+h4 {
+    color: #fff;
+}
+
+.score-area p {
+    color: #ffffffad;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.logo {
+    text-align: center;
+    display: block;
+    margin: 30px auto 50px auto;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+    background-image: linear-gradient(#013caa, #118CD9);
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.grid {
+    width: 250px;
+    height: 500px;
+    background-color: rgba(255, 255, 255,.05);
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+    /* margin: 0 auto; */
+}
+
+.grid div {
+    height: 25px;
+    width: 25px;
+    box-sizing: border-box;
+}
+
+.taken {
+}
+
+.tetromino {
+    border-left-color: rgba(0, 0, 0, 30%);
+    border-left-style: inset;
+    border-left-width: 4px;
+
+    border-bottom-color: rgba(0, 0, 0, 30%);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: inset;
+    border-bottom-width: 4px;
+
+    border-right-color: rgba(255, 255, 255, 30%);
+    border-right-style: inset;
+    border-right-width: 4px;
+
+    border-top-color: rgba(255, 255, 255, 30%);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: inset;
+    border-top-width: 4px;
+
+    box-sizing: border-box;
+}
+
+.mini-grid {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.mini-grid div {
+    height: 25px;
+    width: 25px;
+}
+
+#pause-play-button {
+    display: none;
+}
+
+.game-container div {
+    padding: 0px;
+}
+
+.wrap {
+    background-color: rgb(164 209 245 / 36%);
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    min-width: 230px;
+}
+
+button {
+    padding: 10px 40px 10px 40px;
+    color: white;
+    background-color: rgb(13, 213, 76);
+    margin: 0 auto;
+    border: 1px solid rgb(0, 174, 55);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(12, 179, 65);
+}
+
+.pause {
+    background-color: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.60);
+    color: rgba(255,255,255,.80);
+}
+
+.button-area {
+    margin: 0 auto;
+    text-align: center;
+    margin: 10px;
+}
+
+.upnext {
+    background-color: rgba(255,255,255,.10);
+    border-radius: 10px;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+    padding: 10px;
+}
