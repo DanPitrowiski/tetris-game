@@ -4,14 +4,9 @@ if (document.readyState !== 'loading') {
 } else {
     document.addEventListener('DOMContentLoaded', function () {
         console.log('document was not ready, place code here');
-        // debugger;
         myInitCode();
     });
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     myInitCode();
-// })
 
 function myInitCode() {
     const grid = document.querySelector('.grid');
@@ -28,6 +23,18 @@ function myInitCode() {
     // Adding Event Listener for the Keystrokes
 
     document.onkeydown = KeyCheck;
+    document.onkeyup = InstantCheck;
+
+    function InstantCheck(event) {
+        var KeyPause = event.keyCode;
+
+        switch (KeyPause) {
+            case 32:
+                pauseOrPlay();
+                break;
+        }
+    }
+
     function KeyCheck(event) {
         var KeyID = event.keyCode;
 
@@ -209,10 +216,6 @@ function myInitCode() {
     }
 
     startBtn.addEventListener('click', () => {
-        // if (timerId) {
-        //     clearInterval(timerId)
-        //     timerId = null;
-        // } else {
         resetGame();
         gameOverMessage.style.display = "none";
         draw();
@@ -224,9 +227,12 @@ function myInitCode() {
         displayUpNext();
     })
 
-    pausePlayBtn.addEventListener('click', () => {
-        checkText = pausePlayBtn.innerHTML;
-        if (checkText === 'PLAY') {
+    pausePlayBtn.addEventListener('click', pauseOrPlay)
+
+    function pauseOrPlay() {
+        // debugger;
+        // let checkText = pausePlayBtn.innerHTML;
+        if (timerId === null) {
             pausePlayBtn.innerHTML = "PAUSE";
             pausePlayBtn.classList.add("pause");
             timerId = setInterval(moveDown, 1000);
@@ -236,7 +242,7 @@ function myInitCode() {
             clearInterval(timerId)
             timerId = null;
         }
-    })
+    }
 
     function addScore() {
         for (let i = 0; i < 199; i += width) {
@@ -278,6 +284,7 @@ function myInitCode() {
             el.style.backgroundColor = '';
             if (i >= 200) {break;}
           };
+          scoreDisplay.innerHTML = "0";
           draw()
     }
 }
